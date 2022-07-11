@@ -57,8 +57,9 @@ class GScholar(Search):
 		'''
 
 		res = []
-		for page_num in self.pages:
-			page = self.pages[page_num]
+		
+		for page_num in self.pages :
+			page = self.pages[page_num] #google recognizes the first page as bot so redoing it
 			soup = BeautifulSoup(page, 'html.parser')
 			texts_parse = soup.findAll('div', {'class': 'gs_r gs_or gs_scl'})
 
@@ -164,9 +165,20 @@ class GScholar(Search):
 
 		if self.links:
 			return self.links
-
-		res = [unquote(res.find('a')['href']) for res in self.get_main('h3', {'class': 'gs_rt'})]
-		self.links.extend(res)
+		out_res = []
+		for res in self.get_main('h3', {'class': 'gs_rt'}):
+			
+			if res is None:
+				value_ = ''
+			else:
+				res2 = res.find('a')
+				if res2 is None:
+					value_ = ''
+				else:
+					value_ = unquote(res2['href'])
+			out_res.append(value_)
+		#res = [unquote(res.find('a')['href']) for res in self.get_main('h3', {'class': 'gs_rt'})]
+		self.links.extend(out_res)
 
 		return self.links
 

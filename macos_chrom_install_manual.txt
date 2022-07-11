@@ -19,3 +19,6 @@ or
 pip install webdriver-manager
 
 in case of using it enable it in the getwebpage.py to import and in the funciton get_url()
+
+for ubuntu install the chromium from conda:
+ conda install -c conda-forge python-chromedriver-binary

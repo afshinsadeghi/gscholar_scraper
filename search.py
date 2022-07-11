@@ -54,7 +54,11 @@ class Search:
         get_page =  GetWebPage()
            
         while page_num <= max_page_num:
-            search_url = url.format(self.search_word, page_num)
+            if page_num == 0:  #google recognizes it as bot.
+                page_num_to_send = -10
+            else:
+                page_num_to_send = page_num
+            search_url = url.format(self.search_word, page_num_to_send)
             page = get_page.get_url(search_url) # #page = requests.get(search_url)
             result.update({num: page})  #result.update({num: page.content})
             page_num += 10

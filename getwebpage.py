@@ -7,7 +7,8 @@ from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.common.by import By
 
 #in case using ChromeDriverManager enable this
-#from webdriver_manager.chrome import ChromeDriverManager
+from webdriver_manager.chrome import ChromeDriverManager
+from webdriver_manager.firefox import GeckoDriverManager as FireFoxDriverManager
 import logging
 import os
 import fnmatch
@@ -35,16 +36,35 @@ class GetWebPage:
 
     def get_url(self,url):
         #driver_path = self.findChromeDriver() #this is for windows. for mac read in my manual 
-        driver_path = '/Users/asadeghi/bin/chromedriver'
+        #driver_path = '/Users/asadeghi/bin/chromedriver'
 
-        options = webdriver.ChromeOptions()
-        options.add_argument("--start-maximized")
-        driver = webdriver.Chrome(driver_path, options=options)
-        #driver = webdriver.Chrome(ChromeDriverManager().install(), options=options)
+        run_chrom = 1
+        if run_chrom:
 
+            options = webdriver.ChromeOptions()
+            options.add_argument("--start-maximized")
+            options.add_experimental_option("excludeSwitches", ['enable-automation']);
+            options.add_argument('--profile-directory=Default')
+            #driver = webdriver.Chrome(driver_path, options=options)
+            driver = webdriver.Chrome(ChromeDriverManager().install(), options=options)
+
+        else:
+            options = webdriver.FirefoxOptions()
+            #options.add_argument('--profile-directory=Default')
+            driver = webdriver.Firefox(FireFoxDriverManager().install(), options=options)
+        
+            #WebDriver driver = new FirefoxDriver(allProfiles.getProfile("default"))
+        
+      
         time.sleep(0.5)
         driver.get(url)
-        content = driver.findElement(By.tagName("body")).getText();
-        time.sleep(5)
+        #content = driver.findElement(By.tagName("body")).getText();
+        element = driver.find_element_by_tag_name("body")
+        
+        content = element.get_attribute('innerHTML')
+        #content_text = element.text  #this is the text a user see without tags etc
+        #print(content)
+        #print(element_text)
+        time.sleep(2)
         driver.close()
         return content

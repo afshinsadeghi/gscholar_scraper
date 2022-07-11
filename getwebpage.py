@@ -6,7 +6,7 @@ from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.common.by import By
 
-
+#in case using ChromeDriverManager enable this
 #from webdriver_manager.chrome import ChromeDriverManager
 import logging
 import os

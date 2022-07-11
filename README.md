@@ -10,6 +10,11 @@ v1:
 
 v2 : 
 debugged for entries that have no url
+output is saved both as json and csv files
+
+
+
+
 
 Disclaimer: 
 This code is for educational purposes only and the user is responsibe for any usage of the code.

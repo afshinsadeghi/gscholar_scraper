@@ -16,16 +16,16 @@ This code is for educational purposes only and the user is responsibe for any us
 1. Run the scholar searcher : python run_gscholar.py
 3. It stores a .json file and a csv.file that hold the extracted papers.
  
-
-
+v0
+-Code does not run anymore because google recognizes the robot and blocks it. 
 v1:
--That code does not run anymore because google recognizes the robot and blocks it. 
-I replaced it with a code that goes around this problem using google chrom driver.
--automated installation of chromdriver
+-I replaced the page fetcher with a new code that goes around this problem using chromdriver and selenium.
+-still google recognized it as bot, so added features to the browser to look like human(used browser profile and not using the page 1 instead -1 as the first page)
+-Automated installation of chromdriver
 
 
 v2 : 
-debugged for entries that have no url
-output is saved both as json and csv files
-added docker_file 
+-debugged for entries that have no url
+-output is saved both as json and csv files
+-added docker_file 
 

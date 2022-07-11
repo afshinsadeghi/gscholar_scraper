@@ -1,5 +1,5 @@
 
-Most part of the code is adopted from https://github.com/michael-act/Senginta.py
+Most part of the code in search.py and scholar.py is adopted from https://github.com/michael-act/Senginta.py
 
 
 

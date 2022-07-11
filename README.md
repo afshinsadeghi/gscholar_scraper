@@ -1,4 +1,4 @@
-1. Install the requiements, see macos_chrom_install_manual.txt and requirements.txt
+1. Install the requiements, see macos_chrom_install_manual.txt and requirements.txt,and driver_path in getwebpage.py
 2. set keywords and first_page and last_page  to srape in run_gscholar.py
 3. run the scholar searcher : python run_gscholar.py
 

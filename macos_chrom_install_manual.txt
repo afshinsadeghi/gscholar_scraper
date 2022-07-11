@@ -15,4 +15,5 @@ address will be: $HOME/bin/chromedriver
 
 
 
-or pip install webdriver-manager
+or 
+pip install webdriver-manager

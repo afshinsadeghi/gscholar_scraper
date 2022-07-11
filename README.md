@@ -3,15 +3,15 @@ Most part of the code is adopted from https://github.com/michael-act/Senginta.py
 
 
 
-Disclaimer: 
+## Disclaimer: 
 This code is for educational purposes only and the user is responsibe for any usage of the code.
 
-Installation:
+## Installation:
 1. Install the requiements in requirements.txt
 2. If want to manually install browser driver see see macos_chrom_install_manual.txt and set driver_path in getwebpage.py
 
 
-Usage:
+## Usage:
 1. Set keywords and first_page and last_page  in run_gscholar.py
 1. Run the scholar searcher : python run_gscholar.py
 3. It stores a .json file and a csv.file that hold the extracted papers.

@@ -29,3 +29,5 @@ v2 :
 -output is saved both as json and csv files
 -added docker_file 
 
+v3: 
+- including extracting abstracts 
